@@ -1,0 +1,17 @@
+.container {
+   padding: 15px 30px;
+
+   border-radius: 10px;
+   box-shadow: 0 3px 8px rgb(0 0 0 / 24%);
+}
+
+.container:first-child {
+   margin-bottom: 20px;
+}
+
+
+.title {
+   text-align: center;
+   text-decoration: underline;
+   margin: 0 0 20px;
+}

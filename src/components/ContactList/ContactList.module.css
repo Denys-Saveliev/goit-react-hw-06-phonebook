@@ -1,0 +1,27 @@
+.list {
+   padding: 0;
+}
+
+.item {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 8px;
+   font-style: italic;
+}
+
+.btn {
+   font-size: 12px;
+   cursor: pointer;
+   display: inline-block;
+   font-weight: 600;
+   border: none;
+   border-radius: 5px;
+   padding: 5px 10px;
+   text-transform: capitalize;
+   transition: all .25s ease;
+}
+
+.btn:hover {
+   background-color: gray;
+   color: #fff;
+}

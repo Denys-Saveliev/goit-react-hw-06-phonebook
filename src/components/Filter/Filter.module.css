@@ -1,0 +1,14 @@
+.input::placeholder {
+   font-size: 14px;
+   opacity: .2;
+   line-height: 1.7;
+}
+
+.input {
+   display: block;
+   margin: 0 auto 10px;
+   padding: 6px 15px;
+   border: none;
+   border-radius: 10px;
+   background-color: rgb(243, 242, 242);
+}

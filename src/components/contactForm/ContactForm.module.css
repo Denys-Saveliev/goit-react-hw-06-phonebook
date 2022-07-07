@@ -1,0 +1,39 @@
+.form {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+
+.input::placeholder {
+   font-size: 14px;
+   opacity: .2;
+   line-height: 1.7;
+}
+
+.input {
+   margin-bottom: 15px;
+   padding: 6px 15px;
+   border: none;
+   border-radius: 10px;
+   background-color: rgb(243, 242, 242);
+}
+
+
+
+.btn {
+   width: 100px;
+   font-size: 12px;
+   cursor: pointer;
+   display: inline-block;
+   font-weight: 600;
+   border: none;
+   border-radius: 5px;
+   padding: 5px 10px;
+   text-transform: capitalize;
+   transition: all .25s ease;
+}
+
+.btn:hover {
+   background-color: gray;
+   color: #fff;
+}
