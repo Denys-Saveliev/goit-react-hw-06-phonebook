@@ -3,6 +3,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import Notiflix from 'notiflix';
 import s from './ContactForm.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem, getItems } from 'redux/contactsSlice';
 
 const warningNameValidation = () =>
   Notiflix.Notify.failure(
@@ -22,9 +24,20 @@ const schema = yup.object().shape({
 
 const initialValues = { name: '', number: '' };
 
-const ContactForm = ({ onSubmit }) => {
+const ContactForm = () => {
+  const dispath = useDispatch();
+  const contacts = useSelector(getItems);
+
   const handleSubmit = (values, { resetForm }) => {
-    onSubmit(values);
+    if (
+      contacts.find(
+        contact => contact.name.toLowerCase() === values.name.toLowerCase()
+      )
+    ) {
+      Notiflix.Notify.failure(`${values.name} is already in contacts`);
+      return;
+    }
+    dispath(addItem(values));
     resetForm();
   };
 
