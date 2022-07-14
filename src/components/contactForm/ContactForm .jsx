@@ -5,6 +5,7 @@ import Notiflix from 'notiflix';
 import s from './ContactForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem, getItems } from 'redux/contactsSlice';
+import { nanoid } from 'nanoid';
 
 const warningNameValidation = () =>
   Notiflix.Notify.failure(
@@ -25,6 +26,7 @@ const schema = yup.object().shape({
 const initialValues = { name: '', number: '' };
 
 const ContactForm = () => {
+  const id = nanoid();
   const dispath = useDispatch();
   const contacts = useSelector(getItems);
 
@@ -37,7 +39,7 @@ const ContactForm = () => {
       Notiflix.Notify.failure(`${values.name} is already in contacts`);
       return;
     }
-    dispath(addItem(values));
+    dispath(addItem({ id, ...values }));
     resetForm();
   };
 
